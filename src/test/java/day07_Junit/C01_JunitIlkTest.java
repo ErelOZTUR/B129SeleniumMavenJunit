@@ -25,6 +25,7 @@ public class C01_JunitIlkTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://amazon.com");
+        System.out.println();
         driver.close();
 
     }
