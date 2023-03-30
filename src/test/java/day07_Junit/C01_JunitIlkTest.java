@@ -12,7 +12,7 @@ public class C01_JunitIlkTest {
     @Test
     public void test02() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver(new ChromeOptions().addArguments("--remote-allow-origins=*"));
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://techproeducation.com");
