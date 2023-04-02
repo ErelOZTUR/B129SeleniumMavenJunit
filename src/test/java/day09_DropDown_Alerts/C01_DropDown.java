@@ -46,10 +46,7 @@ public class C01_DropDown {
         WebElement tumEyaletler = driver.findElement(By.cssSelector("select[id='state']"));
         Select select = new Select(tumEyaletler);
         List<WebElement> stateList = select.getOptions();//Bütün options taglarını getir
-        //for (WebElement w:stateList) {
-        //    System.out.println(w.getText());
-        // }
-    //    stateList.forEach(t-> System.out.println(t.getText()));
+
         //a.Tüm eyalet isimlerini yazdıralım
         List<WebElement>tumElayetler=driver.findElements(By.xpath("//*[@id='state']//option"));
         tumElayetler.forEach(t-> System.out.println(t.getText()));
