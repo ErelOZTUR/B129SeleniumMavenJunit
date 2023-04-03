@@ -50,6 +50,7 @@ public abstract class TestBase {
     }
     //Alert promptBox
     public static void alertprompt(String text){
+
         driver.switchTo().alert().sendKeys(text);
     }
     //DropDown VisibleText
