@@ -42,6 +42,7 @@ public class C01_DropDown {
     }
     @Test
     public void test02() {
+        driver.get("https://testcenter.techproeducation.com/index.php?page=dropdown");
         //a. Tüm eyalet isimlerini yazdıralım
         WebElement tumEyaletler = driver.findElement(By.cssSelector("select[id='state']"));
         Select select = new Select(tumEyaletler);
