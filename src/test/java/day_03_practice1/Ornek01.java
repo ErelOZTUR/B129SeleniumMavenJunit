@@ -25,16 +25,10 @@ WebElement ddm=driver.findElement(By.id("searchDropdownBox"));
 
     @Test
     public void test02() {
-        // arama cubuguna "Java" aratın
         driver.get("https://www.amazon.com/");
-      WebElement aramaKutusu= driver.findElement(By.xpath("//*[@id='twotabsearchtextbox']"));
-      aramaKutusu.sendKeys("java",Keys.ENTER);
-
-        // arama sonuclarinin Java icerdigini test edin
-     String actual=aramaKutusu.getText();
-
-        String expected="java";
-        Assert.assertTrue(actual.contains(expected));
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("java",Keys.ENTER);
+        WebElement sonuc=driver.findElement(By.cssSelector("[class='a-section a-spacing-small a-spacing-top-small']"));
+        String actual=sonuc.getText();
+        Assert.assertTrue(actual.contains("java"));
     }
-
 }
