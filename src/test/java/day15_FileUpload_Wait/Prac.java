@@ -6,9 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
 
-public class C01_FileUpload extends TestBase {
+public class Prac extends TestBase {
     @Test
-    public void fileUpload() {
+    public void test() {
          /*
         Bir Web sayfasında upload işlemi yapmamız gerekirse;
             1-Öncelikle upload edeceğimiz webelementi locate ederiz
@@ -17,18 +17,16 @@ public class C01_FileUpload extends TestBase {
          */
         //https://the-internet.herokuapp.com/upload adresine gidin
         driver.get("https://the-internet.herokuapp.com/upload");
-
-        //b129.txt dosyasını yükleyin(upload)
-        WebElement dosyaSecWebElement = driver.findElement(By.id("file-upload"));
+        WebElement upLoad=driver.findElement(By.id("file-upload"));
         bekle(3);
-        String dosyaWay = "C:\\Users\\monster\\Desktop\\b129.txt.txt";
-       // String dosyaYolu1 = System.getProperty("user.home")+"\\OneDrive\\Masaüstü\\b129.txt";
-        dosyaSecWebElement.sendKeys(dosyaWay);
-        bekle(3);
+        String dosyaYolu="C:\\Users\\monster\\Desktop\\b129.txt.txt";
+        String dosyaYolu1=System.getProperty("user.home") + "\\Desktop\\b129.txt.txt";
+        System.out.println(dosyaYolu1);
+        upLoad.sendKeys(dosyaYolu);
         driver.findElement(By.id("file-submit")).click();
 
-        //“File Uploaded!” textinin görüntülendiğini test edin
-        Assert.assertTrue(driver.findElement(By.xpath("//h3")).isDisplayed());
+        WebElement fileUpload=driver.findElement(By.xpath("//h3"));
+        Assert.assertTrue(fileUpload.isDisplayed());
 
     }
 }
